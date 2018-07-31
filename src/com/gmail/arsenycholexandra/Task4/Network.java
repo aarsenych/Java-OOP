@@ -24,11 +24,12 @@ public class Network {
 		this.networkName = networkName;
 	}
 	
-	ArrayList<String> network = new ArrayList<String>();
-	
-		
-	public void phoneRegistration(Phone phoneNumber) {
-		network.add(0, phoneNumber.toString());
+	ArrayList<String> phones = new ArrayList<String>();
+	public void addPhone(Phone phone) {
+		phones.add(phone.getPhoneNumber());
 	}
-
+	
+	public boolean findPhoneNumber(Phone phone) {
+		return phones.contains(phone.getPhoneNumber());
+	}
 }

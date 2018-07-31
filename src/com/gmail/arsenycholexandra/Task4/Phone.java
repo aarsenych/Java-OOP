@@ -3,6 +3,7 @@ import java.util.ArrayList;;
 
 public class Phone {
 	private String phoneNumber;
+	private Network network;
 	
 	public Phone(String phoneNumber) {
 		super();
@@ -25,14 +26,19 @@ public class Phone {
 	}
 	
 	
-	public void call(Phone phoneNumber) {
-		for (int i = 0; i < network.size(); i++) {
-			if (getPhoneNumber() == network.get(i)) {
-				System.out.println("Ring - ring!");
-			} else {
-				System.out.println("Your number doesn`t exist =(");
-			}
+	public void phoneRegistration(Network network) {
+		this.network = network;
+		network.addPhone(this);
+	}
+
+	
+	public void call(Phone phone) {
+		if (network.findPhoneNumber(phone)) {
+			System.out.println("Ring - ring!");
+		} else {
+			System.out.println("Number doesn`t exist");
 		}
+		
 	}
 
 }
