@@ -40,12 +40,12 @@ public class Circle extends Shape {
 
 	@Override
 	public double getPerimeter() {
-		return 2* Math.PI * Math.sqrt(Math.pow((p1.getX()-p2.getX()), 2.0) + Math.pow((p1.getY()-p2.getY()), 2.0));	
+		return 2* Math.PI * p1.getDistance(p2);	
 	}
 	
 	@Override
 	public double getArea() {
-		return  Math.PI * Math.pow(Math.sqrt(Math.pow((p1.getX()-p2.getX()), 2.0) + Math.pow((p1.getY()-p2.getY()), 2.0)),2.0);	
+		return  Math.PI * Math.pow(p1.getDistance(p2),2.0);	
 	}
 
 	/* (non-Javadoc)

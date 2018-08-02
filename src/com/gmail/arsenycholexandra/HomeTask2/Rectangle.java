@@ -77,15 +77,15 @@ public class Rectangle extends Shape {
 
 	@Override
 	public double getPerimeter() {
-		return Math.sqrt(Math.pow((p1.getX()-p2.getX()), 2.0) + Math.pow((p1.getY()-p2.getY()), 2.0)) + Math.sqrt(Math.pow((p2.getX()-p3.getX()), 2.0) + Math.pow((p2.getY()-p3.getY()), 2.0)) +Math.sqrt(Math.pow((p3.getX()-p4.getX()), 2.0) + Math.pow((p3.getY()-p4.getY()), 2.0) + Math.sqrt(Math.pow((p1.getX()-p4.getX()), 2.0) + Math.pow((p1.getY()-p4.getY()) , 2.0)));	
+		return p1.getDistance(p2) + p2.getDistance(p3) +p3.getDistance(p4) + p1.getDistance(p4);	
 	}
 	
 	public double getArea() {
-		double p = Math.sqrt(Math.pow((p1.getX()-p2.getX()), 2.0) + Math.pow((p1.getY()-p2.getY()), 2.0)) + Math.sqrt(Math.pow((p2.getX()-p3.getX()), 2.0) + Math.pow((p2.getY()-p3.getY()), 2.0)) +Math.sqrt(Math.pow((p3.getX()-p4.getX()), 2.0) + Math.pow((p3.getY()-p4.getY()), 2.0) + Math.sqrt(Math.pow((p1.getX()-p4.getX()), 2.0) + Math.pow((p1.getY()-p4.getY()) , 2.0))) / 2;
-		double a = Math.sqrt(Math.pow((p1.getX()-p2.getX()), 2.0) + Math.pow((p1.getY()-p2.getY()), 2.0));
-		double b = Math.sqrt(Math.pow((p2.getX()-p3.getX()), 2.0) + Math.pow((p2.getY()-p3.getY()), 2.0));
-		double c = Math.sqrt(Math.pow((p3.getX()-p4.getX()), 2.0) + Math.pow((p3.getY()-p4.getY()), 2.0));
-		double d = Math.sqrt(Math.pow((p1.getX()-p4.getX()), 2.0) + Math.pow((p1.getY()-p4.getY()), 2.0));
+		double p = (p1.getDistance(p2) + p2.getDistance(p3) +p3.getDistance(p4) + p1.getDistance(p4)) / 2;
+		double a = p1.getDistance(p2);
+		double b = p2.getDistance(p3);
+		double c = p3.getDistance(p4);
+		double d = p1.getDistance(p4);
 		double s = Math.sqrt(p * (p - a) * (p - b) * (p - c) * (p - d));
 		return s;
 	}

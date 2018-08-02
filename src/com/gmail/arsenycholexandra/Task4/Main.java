@@ -15,8 +15,9 @@ public class Main {
 		ph2.phoneRegistration(net);
 		ph3.phoneRegistration(net);
 		
-		ph1.call(ph2);
-		ph1.call(ph4);
+		ph1.call(ph2); // Call successful
+		ph1.call(ph4); // Call unsuccessful
+		ph2.call(ph2); // Call successful
 		
 		
 	}
