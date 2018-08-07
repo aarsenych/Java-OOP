@@ -9,12 +9,12 @@ public class Main {
 		Human h = new Human("Vasya", 25);
 		h.showInfo();
 
-		System.out.println();
 		Student st = new Student("Andrez", 22, "EV-71");
 		Student st2 = new Student("Andrey", 20, "EV-71");
 		Student st3 = new Student("Nick", 21, "EV-71");
 		System.out.println();
 		st.showInfo();
+
 		Group gr = new Group();
 		try {
 			gr.addStudent(st);
@@ -30,7 +30,7 @@ public class Main {
 		findStudent("Andr", gr);
 
 		System.out.println();
-		
+
 		Arrays.sort(gr.getGroupList(), new Comparator<Student>() {
 			@Override
 			public int compare(Student s1, Student s2) {
@@ -52,14 +52,15 @@ public class Main {
 			}
 		}
 	}
-	
+
 	private static void findStudent(String name, Group gr) {
 		int position = gr.searchStudent(name);
-		
+
 		if (position >= 0) {
-			System.out.println("Student " + gr.getByIndex(position).getName() + " is on " + position + " position of list");
+			System.out.println(
+					"Student " + gr.getByIndex(position).getName() + " is on " + position + " position of list");
 		} else {
-			System.out.println("There is no such student in list") ;
+			System.out.println("There is no such student in list");
 		}
 	}
 }
