@@ -59,4 +59,9 @@ public class Human {
 	public String toString() {
 		return "Human [ name= " + name + ", age = " + age + "]";
 	}
+
+	public boolean equals(Student stud) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

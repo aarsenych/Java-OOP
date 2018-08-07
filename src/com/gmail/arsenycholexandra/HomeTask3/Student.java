@@ -39,6 +39,34 @@ public class Student extends Human implements Comparable<Student> {
 		int cmp = this.getName().compareTo(student.getName());
 		return cmp;
 	}
+	
+	@Override
+	public boolean equals(Student stud) {
+		if (this == stud) {
+			return true;
+		}
+		if (stud == null) {
+			return false;
+		}
+		if (this.getClass() != stud.getClass()) {
+			return false;
+		}
+		
+		Student other = (Student) stud;
+		
+		if (this.getAge() != other.getAge()) {
+			return false;
+		}
+		if (this.getName() == null) {
+			if (other.getName() != null) {
+				return false;
+			}
+		}
+		else if (!this.getName().equals(other.getName())) {
+				return false;
+		}
+		return true;	
+	}
 
 	/*
 	 * (non-Javadoc)

@@ -12,6 +12,8 @@ public class Main {
 		Student st = new Student("Andrez", 22, "EV-71");
 		Student st2 = new Student("Andrey", 20, "EV-71");
 		Student st3 = new Student("Nick", 21, "EV-71");
+		Student st4 = new Student("Roland", 21, "EV-71");
+		Student st5 = new Student("Zack", 21, "EV-71");
 		System.out.println();
 		st.showInfo();
 
@@ -20,32 +22,22 @@ public class Main {
 			gr.addStudent(st);
 			gr.addStudent(st2);
 			gr.addStudent(st3);
+			gr.addStudent(st4);
+			gr.addStudent(st5);
 		} catch (TooManyStudentsException e) {
 			System.out.println(e.getMessage());
 		}
 
 		System.out.println();
-		findStudent("Andrey", gr);
-		findStudent("Andre", gr);
-		findStudent("Andr", gr);
+		
+		gr.findStudent("Andrey");
+		gr.findStudent("Alex");
+		gr.removeStudent(st2);
 
 		System.out.println();
 
-		Arrays.sort(gr.getGroupList(), new Comparator<Student>() {
-			@Override
-			public int compare(Student s1, Student s2) {
-				if (s1 == null && s2 == null) {
-					return 0;
-				}
-				if (s1 == null) {
-					return 1;
-				}
-				if (s2 == null) {
-					return -1;
-				}
-				return s1.compareTo(s2);
-			}
-		});
+		gr.sort();
+		
 		for (Student student : gr.getGroupList()) {
 			if (student != null) {
 				System.out.println(student);
@@ -53,14 +45,5 @@ public class Main {
 		}
 	}
 
-	private static void findStudent(String name, Group gr) {
-		int position = gr.searchStudent(name);
-
-		if (position >= 0) {
-			System.out.println(
-					"Student " + gr.getByIndex(position).getName() + " is on " + position + " position of list");
-		} else {
-			System.out.println("There is no such student in list");
-		}
-	}
+	
 }
