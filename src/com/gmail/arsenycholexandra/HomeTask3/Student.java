@@ -10,7 +10,7 @@ public class Student extends Human implements Comparable<Student> {
 	}
 
 	public Student() {
-		
+		super();
 	}
 
 	/**
