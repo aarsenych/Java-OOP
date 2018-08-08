@@ -9,8 +9,8 @@ public class Student extends Human implements Comparable<Student> {
 		this.groupName = groupName;
 	}
 
-	public Student(String name, int age) {
-		super(name, age);
+	public Student() {
+		
 	}
 
 	/**
@@ -19,6 +19,7 @@ public class Student extends Human implements Comparable<Student> {
 	public String getGroupName() {
 		return groupName;
 	}
+
 
 	/**
 	 * @param groupName
@@ -66,6 +67,16 @@ public class Student extends Human implements Comparable<Student> {
 				return false;
 		}
 		return true;	
+	}
+	
+	
+	@Override
+	public int hashCode() {
+		int result = 17;
+		result = 31 * result + this.getName().hashCode();
+		result = 31 * result + this.getAge();
+		result = 31 * result + this.groupName.hashCode();
+		return result;
 	}
 
 	/*
