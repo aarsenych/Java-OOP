@@ -20,6 +20,14 @@ public class Main {
 		System.out.println("Triangle perimeter is "+ tr.getArea());
 		System.out.println("Rectangle perimeter is "+ rc.getPerimeter());
 		System.out.println("Rectangle area is "+ rc.getArea());
+		
+		Desk d = new Desk();
+		d.addShape(2, tr);
+		d.addShape(2, tr);
+		d.addShape(3, rc);
+		d.addShape(6, sc);
+		d.removeShape(2);
+		System.out.println(d.allShapesArea());
 	}
 
 }
