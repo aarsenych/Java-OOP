@@ -92,68 +92,26 @@ public class Group implements VoenkomIsLookingForYou {
 		}
 	}
 
-	private static Comparator<Student> byAgeComparator = new Comparator<Student>() {
-		@Override
-		public int compare(Student s1, Student s2) {
-			if (s1 == null && s2 == null) {
-				return 0;
-			}
-			if (s1 == null) {
-				return 1;
-			}
-			if (s2 == null) {
-				return -1;
-			}
-			return s1.getAge() - s2.getAge();
-		}
-	};
-
 	public void sortByAge() {
-		Arrays.sort(getGroupList(), Group.byAgeComparator);
+		Arrays.sort(getGroupList(),
+				(s1, s2) -> CheckNULL.checkNULL(s1, s2) != CheckNULL.NOT_NULL ? CheckNULL.checkNULL(s1, s2)
+						: s1.getAge() - s2.getAge());
 	}
-
-	private static Comparator<Student> byGroupComparator = new Comparator<Student>() {
-		@Override
-		public int compare(Student s1, Student s2) {
-			if (s1 == null && s2 == null) {
-				return 0;
-			}
-			if (s1 == null) {
-				return 1;
-			}
-			if (s2 == null) {
-				return -1;
-			}
-			return s1.getGroupName().compareTo(s2.getGroupName());
-		}
-	};
-
-	public void sortByGroup() {
-		Arrays.sort(getGroupList(), Group.byGroupComparator);
-	}
-
-	private static Comparator<Student> byNameComparator = new Comparator<Student>() {
-		@Override
-		public int compare(Student s1, Student s2) {
-			if (s1 == null && s2 == null) {
-				return 0;
-			}
-			if (s1 == null) {
-				return 1;
-			}
-			if (s2 == null) {
-				return -1;
-			}
-			return s1.getName().compareTo(s2.getName());
-		}
-	};
 
 	public void sortByName() {
-		Arrays.sort(getGroupList(), Group.byNameComparator);
+		Arrays.sort(getGroupList(),
+				(s1, s2) -> CheckNULL.checkNULL(s1, s2) != CheckNULL.NOT_NULL ? CheckNULL.checkNULL(s1, s2)
+						: s1.getName().compareTo(s2.getName()));
+	}
+
+	public void sortByGroup() {
+		Arrays.sort(getGroupList(),
+				(s1, s2) -> CheckNULL.checkNULL(s1, s2) != CheckNULL.NOT_NULL ? CheckNULL.checkNULL(s1, s2)
+						: s1.getGroupName().compareTo(s2.getGroupName()));
 	}
 
 	public Student[] GetToTheArmyNow() {
-		Student[] sorted = new Student[groupList.length]; 
+		Student[] sorted = new Student[groupList.length];
 		int j = 0;
 		for (int i = 0; i < groupList.length; i++) {
 			if (groupList[i] != null) {
@@ -163,7 +121,7 @@ public class Group implements VoenkomIsLookingForYou {
 				}
 			}
 		}
-		
+
 		return sorted;
 	}
 }
