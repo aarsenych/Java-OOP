@@ -1,0 +1,4 @@
+Roland 23 EK-71 false
+Nick 19 EV-71 true
+Zack 21 EV-71 true
+Andrez 16 EV-72 true

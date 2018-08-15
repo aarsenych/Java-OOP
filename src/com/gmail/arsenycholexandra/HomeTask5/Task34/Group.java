@@ -1,7 +1,11 @@
-package com.gmail.arsenycholexandra.HomeTask4;
+package com.gmail.arsenycholexandra.HomeTask5.Task34;
 
 import javax.swing.JOptionPane;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -30,11 +34,15 @@ public class Group implements VoenkomIsLookingForYou {
 		return groupList;
 	}
 
+	/**
+	 * @param stud
+	 */
 	public void removeStudent(Student stud) {
 		for (int i = 0; i < groupList.length; i++) {
 			if (groupList[i] == null)
 				continue;
-			if (groupList[i].equals(stud)) {
+			if (groupList[i].getName().equals(stud.getName()) && groupList[i].getAge() == stud.getAge()
+					&& groupList[i].getSex() == stud.getSex()) {
 				groupList[i] = null;
 			}
 		}
@@ -73,7 +81,12 @@ public class Group implements VoenkomIsLookingForYou {
 
 			stud.setAge(Integer.valueOf(JOptionPane.showInputDialog("Input student`s age")));
 			if (stud.getAge() < 0) {
-				throw new NegativeValueException("Negative value");
+				try {
+					throw new NegativeValueException("Negative value");
+				} catch (NegativeValueException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 			stud.setName(JOptionPane.showInputDialog("Input student's name"));
 			stud.setGroupName(JOptionPane.showInputDialog("Input student's group"));
@@ -120,16 +133,17 @@ public class Group implements VoenkomIsLookingForYou {
 			if (groupList[i] != null) {
 				if (groupList[i].getAge() >= 18 && groupList[i].getSex() == true) {
 					j++;
-				} 
-			} 
+				}
+			}
 		}
 		Student[] sorted = new Student[j];
 		int i = 0;
 		for (Student stud : groupList) {
-				if (stud != null && stud.getAge() >= 18 && stud.getSex() == true) {
-					sorted[i++] = stud;	
-				}	
+			if (stud != null && stud.getAge() >= 18 && stud.getSex() == true) {
+				sorted[i++] = stud;
+			}
 		}
 		return sorted;
 	}
+
 }

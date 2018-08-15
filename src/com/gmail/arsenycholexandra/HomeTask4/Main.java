@@ -11,10 +11,10 @@ public class Main {
 		Human h = new Human("Vasya", 25, true);
 		h.showInfo();
 
-		Student st = new Student("Andrez", 22, "EV-72", true);
+		Student st = new Student("Andrez", 16, "EV-72", true);
 		Student st2 = new Student("Andrey", 20, "EV-69", false);
-		Student st3 = new Student("Nick", 21, "EV-71", true);
-		Student st4 = new Student("Roland", 21, "EK-71", false);
+		Student st3 = new Student("Nick", 19, "EV-71", true);
+		Student st4 = new Student("Roland", 13, "EK-71", false);
 		Student st5 = new Student("Zack", 21, "EV-71", true);
 		System.out.println();
 		st.showInfo();
@@ -65,7 +65,7 @@ public class Main {
 			}
 		}
 		System.out.println();
-		for (Student recruts : gr.GetToTheArmyNow()) {
+		for (Student recruts : gr.getToTheArmyNow()) {
 			if (recruts != null) {
 				System.out.println(recruts);
 			}
