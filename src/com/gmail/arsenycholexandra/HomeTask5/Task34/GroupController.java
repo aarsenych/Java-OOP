@@ -67,7 +67,7 @@ public class GroupController implements GroupDAO {
 			e.printStackTrace();
 		}
 
-		return null;
+		return group;
 	}
 
 }
