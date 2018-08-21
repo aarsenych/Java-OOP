@@ -33,31 +33,30 @@ public class Summation extends Thread {
 		return res;
 	}
 
-	 public static int parallelSum(int[] arr, int threads)
-	    {
-	        int size = (int) Math.ceil(arr.length * 1.0 / threads);
+	public static int parallelSum(int[] arr, int threads) {
+		int size = (int) Math.ceil(arr.length * 1.0 / threads);
 
-	        Summation[] sums = new Summation[threads];
+		Summation[] sums = new Summation[threads];
 
-	        for (int i = 0; i < threads; i++) {
-	            sums[i] = new Summation(arr, i * size, (i + 1) * size);
-	            sums[i].start();
-	        }
+		for (int i = 0; i < threads; i++) {
+			sums[i] = new Summation(arr, i * size, (i + 1) * size);
+			sums[i].start();
+		}
 
-	        try {
-	            for (Summation sum : sums) {
-	                sum.join();
-	            }
-	        } catch (InterruptedException e) { }
+		try {
+			for (Summation sum : sums) {
+				sum.join();
+			}
+		} catch (InterruptedException e) {
+		}
 
-	        int total = 0;
+		int total = 0;
 
-	        for (Summation sum : sums) {
-	            total += sum.getPartSum();
-	        }
+		for (Summation sum : sums) {
+			total += sum.getPartSum();
+		}
 
-	        return total;
-	    }
+		return total;
+	}
 
 }
-
