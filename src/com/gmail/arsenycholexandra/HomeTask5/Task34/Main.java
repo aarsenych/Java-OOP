@@ -1,5 +1,11 @@
 package com.gmail.arsenycholexandra.HomeTask5.Task34;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.sql.Savepoint;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -10,7 +16,7 @@ import com.gmail.arsenycholexandra.HomeTask4.NegativeValueException;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException, IOException {
 		Human h = new Human("Vasya", 25, true);
 		h.showInfo();
 
@@ -80,19 +86,23 @@ public class Main {
 		System.out.println();
 		System.out.println();
 		System.out.println();
-		
+
 		GroupDAO c = new GroupController();
 
 		String S = "C:\\Users\\Lesya\\Desktop\\JAVA projects\\com.gmail.arsenycholexandra.homework\\src\\com\\gmail\\arsenycholexandra\\HomeTask5\\GroupFile.txt";
 
-		c.saveGroup(gr, S);
-		c.readGroup(gr1, S);
+//		c.saveGroup(gr, S);
+//		c.readGroup(gr1, S);
 
 		for (Student student : gr1.getGroupList()) {
 			if (student != null) {
 				System.out.println(student);
 			}
 		}
-	}
 
+		Group.readGroup(gr, S);
+		Group.writeGroup(gr1, S);
+		
+
+	}
 }

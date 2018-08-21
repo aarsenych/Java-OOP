@@ -3,19 +3,21 @@ package com.gmail.arsenycholexandra.HomeTask5.Task34;
 import javax.swing.JOptionPane;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Group implements VoenkomIsLookingForYou {
-
-	// CSV format for excel
-	// split by
-	// pattern DAO 4 task of HW for 3-4 task
+public class Group implements VoenkomIsLookingForYou, Serializable {
 
 	private Student[] groupList = new Student[10];
+	private static final long serialVersionUID = 1L;
 
 	public void addStudent(Student stud) throws TooManyStudentsException {
 		boolean studentAdded = false;
@@ -144,6 +146,43 @@ public class Group implements VoenkomIsLookingForYou {
 			}
 		}
 		return sorted;
+	}
+	
+	public void printgroup() {
+		for(Student stud : groupList) {
+			if(stud != null) {
+			System.out.println(stud);
+			}
+		}
+	}
+	
+	public static void readGroup(Group gr, String filepath) {
+		try (ObjectOutputStream OOS = new ObjectOutputStream(new FileOutputStream(filepath))) {
+			OOS.writeObject(gr);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void writeGroup(Group gr, String filepath) {
+		try (ObjectInputStream OIS = new ObjectInputStream(new FileInputStream(filepath))) {
+
+			try {
+				gr = (Group) OIS.readObject();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (ClassNotFoundException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Print group:");
+		gr.printgroup();
 	}
 
 }

@@ -17,8 +17,16 @@ public class Main {
 		File file1 = new File("C:\\Users\\Lesya\\Desktop\\JAVA projects\\com.gmail.arsenycholexandra.homework\\src\\com\\gmail\\arsenycholexandra\\HomeTask5\\File1.txt");
 		File file2 = new File("C:\\Users\\Lesya\\Desktop\\JAVA projects\\com.gmail.arsenycholexandra.homework\\src\\com\\gmail\\arsenycholexandra\\HomeTask5\\File2.txt");
 		File file3 = new File("C:\\Users\\Lesya\\Desktop\\JAVA projects\\com.gmail.arsenycholexandra.homework\\src\\com\\gmail\\arsenycholexandra\\HomeTask5\\File3.txt");
-				
-		TwoFilesTogether.filterWords(file1, file2, file3);
+		
+		Action action = new Action();
+		Provider provider = new Provider(action);
+		Receiver receiver = new Receiver(action);
+		
+		Thread threadOne = new Thread(provider);
+		Thread threadTwo = new Thread(receiver);
+		
+		threadOne.start();
+		threadTwo.start();
 		
 		
 		

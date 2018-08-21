@@ -1,6 +1,8 @@
 package com.gmail.arsenycholexandra.HomeTask5.Task34;
 
-public class Student extends Human implements Comparable<Student> {
+import java.io.Serializable;
+
+public class Student extends Human implements Comparable<Student>, Serializable {
 
 	private String groupName;
 
