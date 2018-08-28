@@ -1,0 +1,34 @@
+{
+  "groupList": [
+    {
+      "groupName": "sxc",
+      "name": "Alice",
+      "age": 22,
+      "sex": true
+    },
+    {
+      "groupName": "EV-72",
+      "name": "Andrez",
+      "age": 25,
+      "sex": true
+    },
+    {
+      "groupName": "EV-71",
+      "name": "Nick",
+      "age": 19,
+      "sex": true
+    },
+    {
+      "groupName": "EK-71",
+      "name": "Roland",
+      "age": 23,
+      "sex": false
+    },
+    {
+      "groupName": "EV-71",
+      "name": "Zack",
+      "age": 21,
+      "sex": true
+    }
+  ]
+}

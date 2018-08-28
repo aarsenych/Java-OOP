@@ -33,7 +33,7 @@ public class Main {
 				}
 				fos.flush();
 				fos.close();
-				System.out.println("afsge");
+				
 			} catch (IOException e) {
 				System.out.println(e);
 			}

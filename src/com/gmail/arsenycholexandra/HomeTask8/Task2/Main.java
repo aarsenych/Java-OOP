@@ -1,4 +1,4 @@
-package com.gmail.arsenycholexandra.HomeTask5.Task34;
+package com.gmail.arsenycholexandra.HomeTask8.Task2;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,7 +21,7 @@ public class Main {
 		Human h = new Human("Vasya", 25, true);
 		h.showInfo();
 
-		Student st = new Student("Andrez", 16, "EV-72", true);
+		Student st = new Student("Andrez", 25, "EV-72", true);
 		Student st2 = new Student("Andrey", 20, "EV-69", false);
 		Student st3 = new Student("Nick", 19, "EV-71", true);
 		Student st4 = new Student("Roland", 23, "EK-71", false);
@@ -43,40 +43,26 @@ public class Main {
 
 		System.out.println();
 
-		gr.findStudent("Andrey");
-		gr.findStudent("Alex");
+		
 		gr.removeStudent(st2);
 
-		// try {
-		// gr.addStudentInteractive();
-		// } catch (NegativeValueException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
+		 try {
+		 gr.addStudentInteractive();
+		 } catch (NegativeValueException e) {
+		 // TODO Auto-generated catch block
+		 e.printStackTrace();
+		 }
 
 		System.out.println();
-
-		gr.sortByName();
-
-		for (Student student : gr.getGroupList()) {
-			if (student != null) {
-				System.out.println(student);
-			}
-		}
-		System.out.println();
+		System.out.println("Sorted by age");
 		gr.sortByAge();
-		for (Student student : gr.getGroupList()) {
-			if (student != null) {
-				System.out.println(student);
-			}
-		}
-		System.out.println();
-		gr.sortByGroup();
-		for (Student student : gr.getGroupList()) {
-			if (student != null) {
-				System.out.println(student);
-			}
-		}
+	    gr.printgroup();
+	    gr.sortByName();
+	    System.out.println("Sorted by name");
+	    gr.printgroup();
+		
+
+		
 		System.out.println();
 		for (Student recruts : gr.getToTheArmyNow()) {
 			if (recruts != null) {
@@ -113,7 +99,7 @@ public class Main {
 		System.out.println();
 		System.out.println();
 		groupTwo.printgroup();
-		System.out.println(gr.getClass().getSimpleName().equals("Group"));
+		//System.out.println(gr.getClass().getSimpleName().equals("Group"));
 
 	}
 }
