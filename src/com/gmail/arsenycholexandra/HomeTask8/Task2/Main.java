@@ -99,7 +99,7 @@ public class Main {
 		System.out.println();
 		System.out.println();
 		groupTwo.printgroup();
-		//System.out.println(gr.getClass().getSimpleName().equals("Group"));
+		System.out.println(gr.getClass().getSimpleName().equals("Group"));
 
 	}
 }

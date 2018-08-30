@@ -1,23 +1,32 @@
 package com.gmail.arsenycholexandra.HomeTask9.Task1;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
+
+import com.gmail.arsenycholexandra.HomeTask81.Task1.Group;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class WorkWithFile implements Serializable {
 
-	HashMap<String, String> hm = new HashMap<>();
-	File file;
+	private Map<String, String> hm = new HashMap<>();
+	private File file;
 
-	public WorkWithFile(HashMap<String, String> hm, File file) {
+	public WorkWithFile(Map<String, String> hm, File file) {
 		super();
 		this.hm = hm;
 		this.file = file;
@@ -41,7 +50,7 @@ public class WorkWithFile implements Serializable {
 	/**
 	 * @return the hm
 	 */
-	public HashMap<String, String> getHm() {
+	public Map<String, String> getHm() {
 		return hm;
 	}
 
@@ -49,27 +58,43 @@ public class WorkWithFile implements Serializable {
 	 * @param hm
 	 *            the hm to set
 	 */
-	public void setHm(HashMap<String, String> hm) {
+	public void setHm(Map<String, String> hm) {
 		this.hm = hm;
 	}
 
-	public ArrayList<String> readFile() {
-		Scanner s;
-		ArrayList<String> list = new ArrayList<String>();
-		try {
-			s = new Scanner(this.file);
-			while (s.hasNext()) {
-				list.add(s.next());
+	public ArrayList<String> readFile() throws IOException {
+		ArrayList<String> list = new ArrayList<>();
+		try (BufferedReader f = new BufferedReader(new FileReader(this.file))) {
+			String str = "";
+			for (; (str = f.readLine()) != null;) {
+				list.add(str);
 			}
-			s.close();
-		} catch (FileNotFoundException e) {
+		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			e1.printStackTrace();
 		}
 		return list;
 	}
 
-	public ArrayList<String> translate() {
+	public void saveToJSONFile(File file) {
+		ArrayList<String> arr = new ArrayList<>();
+		try {
+			arr = translate(this.file);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		String gsonSt = gson.toJson(arr);
+		try (PrintWriter pw = new PrintWriter(file)) {
+			pw.println(gsonSt);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public ArrayList<String> translate(File file) throws IOException {
 		ArrayList<String> a = readFile();
 		ArrayList<String> b = new ArrayList<>();
 		for (String string : a) {
@@ -80,46 +105,8 @@ public class WorkWithFile implements Serializable {
 		return b;
 	}
 
-	public void writeToFile(File file) {
-		FileWriter writer = null;
-		try {
-			writer = new FileWriter(file);
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		ArrayList<String> arr = translate();
-		for (String str : arr) {
-			try {
-				writer.write(str);
-				writer.write("\n");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		try {
-			writer.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
 	public void addToVocabulary(String s1, String s2) {
 		hm.put(s1, s2);
-	}
-	
-	public void saveOnDisk(File file) {
-		 try (ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(file))) {
-	            os.writeObject(this.hm);
-	        } catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.gmail.arsenycholexandra.HomeTask8.Task4;
 
 import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Iterator;
 import java.util.Queue;
 
@@ -8,7 +9,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		ArrayDeque<String> bigBang = new ArrayDeque<String>();
+		Deque<String> bigBang = new ArrayDeque<>();
 		int doubleCola = 2;
 		bigBang.add("Sheldon");
 		bigBang.add("Leonard");

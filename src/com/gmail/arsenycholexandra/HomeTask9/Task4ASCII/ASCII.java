@@ -27,7 +27,7 @@ public class ASCII {
 			StringBuilder builder = new StringBuilder();
 
 			for (int x = 0; x < width; x++) {
-				builder.append(image.getRGB(x, y) == -16777216 ? " " : "@");
+				builder.append(image.getRGB(x, y) == -16777216 ? " " : "#");
 
 			}
 			System.out.println(builder);

@@ -1,5 +1,6 @@
-Vitannya
-Zavdannya
-Kit
-Sobaka
-Blakytnyi
+[
+  "Zavdannya",
+  "Nebo",
+  "Dytyna",
+  "Blakytnyi"
+]

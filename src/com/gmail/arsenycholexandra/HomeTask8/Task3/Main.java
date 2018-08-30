@@ -15,10 +15,11 @@ public class Main {
 		String file = "C:\\Users\\Lesya\\Desktop\\JAVA projects\\com.gmail.arsenycholexandra.homework\\src\\com\\gmail\\AliceInWonderland.txt";
 		CountRepeat cr = new CountRepeat(file);
 		char [] c = cr.turnToChars();
-		for (char d : c) {
-			System.out.println(d); 
-		}
+//		for (char d : c) {
+//			System.out.println(d); 
+//		}
 		System.out.println(c.length);
+		cr.countChars();
 		
 	}
 	

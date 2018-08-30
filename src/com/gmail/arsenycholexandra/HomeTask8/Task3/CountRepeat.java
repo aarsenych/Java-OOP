@@ -1,5 +1,6 @@
 package com.gmail.arsenycholexandra.HomeTask8.Task3;
 
+import java.awt.List;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,9 +11,9 @@ import java.util.ArrayList;;
 
 public class CountRepeat {
 
-	String file;
-	static final int SIZE = 26;
-	
+	private String file;
+	private static final int SIZE = 26;
+
 	public CountRepeat(String file) {
 		super();
 		this.file = file;
@@ -63,44 +64,33 @@ public class CountRepeat {
 			String s = readFile(getFile());
 			chars = s.toCharArray();
 		}
-		
+
 		return chars;
 	}
 
 	public void countChars() {
-		ArrayList<String> arr = new ArrayList<>();
-		arr.add("a");
-		arr.add("b");
-		arr.add("c");
-		arr.add("d");
-		arr.add("e");
-		arr.add("f");
-		arr.add("g");
-		arr.add("h");
-		arr.add("i");
-		arr.add("j");
-		arr.add("k");
-		arr.add("l");
-		arr.add("m");
-		arr.add("n");
-		arr.add("o");
-		arr.add("p");
-		arr.add("q");
-		arr.add("r");
-		arr.add("s");
-		arr.add("t");
-		arr.add("u");
-		arr.add("v");
-		arr.add("w");
-		arr.add("x");
-		arr.add("y");
-		arr.add("z");
-		
+		ArrayList<Integer> arr = new ArrayList<>();
+		for (int i = 'A'; i <= 'z'; i++) {
+			int count = 0;
+			char[] ch = turnToChars();
+			for (int j = 0; j < ch.length; j++) {
+				if (ch[j] == i) {
+					count++;
+					arr.add(count);
+					// System.out.println((char)i + " meets " + count + " times");
+				}
+				for (Integer c : arr) {
+					System.out.println(c);
+				}
+
+			}
+
+		}
 	}
-	
+
 	public void printCharAndFrequency() {
 		ArrayList<String> freq = new ArrayList<>();
-		
+
 	}
-	
+
 }
