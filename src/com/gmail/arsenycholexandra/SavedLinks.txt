@@ -1,0 +1,20 @@
+[
+  "\u003ca class\u003dgb1 href\u003d\"https://www.google.com.ua/imghp?hl\u003duk\u0026tab\u003dwi\"\u003e??????????\u003c/a\u003e",
+  "\u003ca class\u003dgb1 href\u003d\"https://maps.google.com.ua/maps?hl\u003duk\u0026tab\u003dwl\"\u003e?????\u003c/a\u003e",
+  "\u003ca class\u003dgb1 href\u003d\"https://www.youtube.com/?gl\u003dUA\u0026tab\u003dw1\"\u003eYouTube\u003c/a\u003e",
+  "\u003ca class\u003dgb1 href\u003d\"https://news.google.com.ua/nwshp?hl\u003duk\u0026tab\u003dwn\"\u003e??????\u003c/a\u003e",
+  "\u003ca class\u003dgb1 href\u003d\"https://mail.google.com/mail/?tab\u003dwm\"\u003eGmail\u003c/a\u003e",
+  "\u003ca class\u003dgb1 href\u003d\"https://drive.google.com/?tab\u003dwo\"\u003e????\u003c/a\u003e",
+  "\u003ca class\u003dgb1 href\u003d\"https://www.google.com/calendar?tab\u003dwc\"\u003e????????\u003c/a\u003e",
+  "\u003ca class\u003dgb1 style\u003d\"text-decoration:none\" href\u003d\"https://www.google.com.ua/intl/uk/options/\"\u003e\u003cu\u003e??????\u003c/u\u003e \u0026raquo;\u003c/a\u003e",
+  "\u003ca href\u003d\"http://www.google.com.ua/history/optout?hl\u003duk\" class\u003dgb4\u003e?????? ???-??????\u003c/a\u003e",
+  "\u003ca  href\u003d\"/preferences?hl\u003duk\" class\u003dgb4\u003e????????????\u003c/a\u003e",
+  "\u003ca target\u003d_top id\u003dgb_70 href\u003d\"https://accounts.google.com/ServiceLogin?hl\u003duk\u0026passive\u003dtrue\u0026continue\u003dhttps://www.google.com.ua/\" class\u003dgb4\u003e?????\u003c/a\u003e",
+  "\u003ca href\u003d\"/advanced_search?hl\u003duk\u0026amp;authuser\u003d0\"\u003e?????????? ?????\u003c/a\u003e",
+  "\u003ca href\u003d\"/language_tools?hl\u003duk\u0026amp;authuser\u003d0\"\u003e???? ???????????\u003c/a\u003e",
+  "\u003ca href\u003d\"https://www.google.com.ua/setprefs?sig\u003d0_HvTndo-8J8OQD8G9psX1SAzx84c%3D\u0026amp;hl\u003dru\u0026amp;source\u003dhomepage\u0026amp;sa\u003dX\u0026amp;ved\u003d0ahUKEwiUtvGPoKHdAhXJWSwKHa_UAXcQ2ZgBCAU\"\u003e???????\u003c/a\u003e",
+  "\u003ca href\u003d\"http://www.google.com.ua/intl/uk/ads/\"\u003e???????\u003c/a\u003e",
+  "\u003ca href\u003d\"http://www.google.com.ua/intl/uk/services/\"\u003e?????? ??? ??????\u003c/a\u003e",
+  "\u003ca href\u003d\"/intl/uk/about.html\"\u003e??? ??? Google\u003c/a\u003e",
+  "\u003ca href\u003d\"https://www.google.com.ua/setprefdomain?prefdom\u003dUS\u0026amp;sig\u003d__oVObuzl-Ht35MVe_pC8FWzQ-4Nc%3D\" id\u003d\"fehl\"\u003eGoogle.com\u003c/a\u003e"
+]
